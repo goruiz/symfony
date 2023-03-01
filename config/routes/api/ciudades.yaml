@@ -1,0 +1,13 @@
+api_ciudades_index:
+   path: /
+   controller: App\Controller\CiudadesController::index
+
+
+ciudades_agregar:
+   path: /agregar
+   controller: App\Controller\CiudadesController::agregar
+
+
+ciudades_modificar:
+   path: /ciudad/modificar/{ciudad}
+   controller: App\Controller\CiudadesController::modificar

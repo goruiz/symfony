@@ -1,0 +1,13 @@
+paises_index:
+   path: /
+   controller: App\Controller\PaisesController::index
+
+
+paises_agregar:
+   path: /pais/agregar
+   controller: App\Controller\PaisesController::agregar
+
+
+paises_modificar:
+   path: /pais/modificar/{pais}
+   controller: App\Controller\PaisesController::modificar

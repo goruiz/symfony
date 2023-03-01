@@ -1,0 +1,11 @@
+usuarios_index:
+    path: /
+    controller: App\Controller\UsuariosController::index
+
+usuarios_agregar:
+    path: /usuario/agregar
+    controller: App\Controller\UsuariosController::agregar
+
+usuarios_modificar:
+    path: /usuario/modificar/{usuario}
+    controller: App\Controller\UsuariosController::modificar

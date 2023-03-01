@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lista Paises{% endblock %}
+
+{% block body %}
+
+    <h1>Paises</h1>
+    <div class="row">
+        <div class="d-flex justify-content-end">
+          <a href="{{ path('paises_agregar') }}" class="btn btn-primary btn-sm">Nueva Pais</a>
+        </div>
+
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th>Id</th>
+                <th>Pais</th>
+                <th>Abe.</th>
+                <th>Estado</th>
+                <th>F. creación</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for entity in entities %}
+              <tr>
+                <th>{{ entity.id }}</th>
+                <td>{{ entity.nombre }}</td>
+                <td>{{ entity.abreviatura }}</td>
+                <td>{{ entity.estado }}</td>
+                <td>{{ entity.fechaCreacion | date("Y-m-d H:i") }}</td>
+                <th>
+                  <a href="{{ path('paises_modificar', {'pais': entity.id }) }}" class="btn btn-info btn-sm">Editar</a>
+                </th>
+              </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Lista Usuarios{% endblock %}
+
+{% block body %}
+
+    <h1>Usuarios</h1>
+    <div class="row">
+        <div class="d-flex justify-content-end">
+          <a href="{{ path('usuarios_agregar') }}" class="btn btn-primary btn-sm">Nuevo Usuario</a>
+        </div>
+
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Telefono</th>
+                <th>Direccion</th>
+                <th>Ciudad</th>
+                <th>Acción</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              {% for entity in entities %}
+              <tr>
+                <th>{{ entity.id }}</th>
+                <td>{{ entity.nombre }}</td>
+                <td>{{ entity.correo }}</td>
+                <td>{{ entity.telefono }}</td>
+                <td>{{ entity.direccion }}</td>
+                <td>{{ entity.ciudad.nombre }}</td>
+                
+                <td>
+                    <a href="{{ path('usuarios_modificar', {'usuario': entity.id }) }}" class="btn btn-info btn-sm">Editar</a>
+                  </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    
+{% endblock %}

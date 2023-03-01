@@ -1,0 +1,23 @@
+index:
+    path: /
+    controller: App\Controller\HomeController::index
+
+
+home:
+    path: /home
+    controller: App\Controller\HomeController::index
+
+
+paises:
+    resource: "routes/paises.yaml"
+    prefix:  /paises
+
+ciudades:
+    resource: "routes/ciudades.yaml"
+    prefix:  /ciudades
+
+usuarios:
+    resource: "routes/usuarios.yaml"
+    prefix:  /usuarios
+
+# Apis rutas

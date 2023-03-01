@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lista Ciudades{% endblock %}
+
+{% block body %}
+
+    <h1>Ciudades</h1>
+
+    <div class="container">
+
+        <div class="d-flex justify-content-end">
+          <a href="{{ path('ciudades_agregar') }}" class="btn btn-primary btn-sm" role="button" aria-label="Close">Nueva Ciudad</a>
+        </div>
+
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th>Id</th>
+                <th>Ciudad</th>
+                <th>C. Iata</th>
+                <th>Pais</th>
+                <th>Estado</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for entity in entities %}
+              <tr>
+                <th>{{ entity.id }}</th>
+                <td>{{ entity.nombre }}</td>
+                <td>{{ entity.codigoIata }}</td>
+                <td>{{ entity.paisId }}</td>
+                <td>{{ entity.estado }}</td>
+                <td>
+                  <a href="{{ path('ciudades_modificar', {'ciudad': entity.id }) }}" class="btn btn-info btn-sm">Editar</a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+{% endblock %}

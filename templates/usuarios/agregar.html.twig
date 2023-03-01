@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulario Usuarios{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <h3>Formulario nuevo Usuario</h3>
+
+        <div class="col-md-6">
+            {{ form_start(formUsuarios) }}
+
+            {{ form_end(formUsuarios) }}
+        </div>
+        
+    </div>
+
+{% endblock %}
